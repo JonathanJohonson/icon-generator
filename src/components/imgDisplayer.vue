@@ -7,7 +7,6 @@
       <img v-for="(img,index) in imgs"
         :class="{active:selected===index, 'small-img':true}"
         :key="index"
-        width="128px"
         :src="img"
         @mousedown ="selected=index"
         >
@@ -35,18 +34,23 @@ export default {
 }
 .small-img {
   margin: 0.13em;
-  width: 10%;
+  width: 128px;
+  /* width: 32px;
+  height: 32px; */
 }
 .large-img {
-  max-width: 100%;
+  /* width: 320px;
+  height: 320px; */
   width: 50%;
+  max-width: 100%;
   max-height: 100%;
 }
 .large-img-holder {
-  border: 2px solid red;
+  padding: auto;
+  /* border: 2px solid red; */
 }
 .small-img-holder {
   height: 120px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 </style>

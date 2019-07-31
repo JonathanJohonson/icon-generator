@@ -19,15 +19,16 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  background-color: #2c3e50;
+  /* color: #2c3e50;
+  background-color: #2c3e50; */
   max-width: 100%;
 }
 
 #main {
-  background-color: rgb(92, 170, 201);
+  background: radial-gradient(800px,rgb(57, 136, 160), #2c3e50, #2c3e50);
+  background: linear-gradient(rgb(57, 136, 160), #2c3e50);
   margin: auto;
-  width: 60rem;
+  /* width: 60rem; */
   max-width: 100%;
 }
 </style>
