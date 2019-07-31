@@ -1,6 +1,5 @@
 <template>
   <div>
-    <homeNav></homeNav>
     <homeBody></homeBody>
     <homeFooter></homeFooter>
   </div>

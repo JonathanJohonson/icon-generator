@@ -1,11 +1,13 @@
 <template>
   <div>
-    <img height="300px" :src="urls[selected]">
-    <div style="display: flex">
-      <img v-for="(img,index) in urls"
-        :class="{active:selected===index, img:true}"
-        :key="index" width="128px"
-        height="72"
+    <div class="large-img-holder">
+      <img class="large-img" :src="imgs[selected]">
+    </div>
+    <div class="small-img-holder">
+      <img v-for="(img,index) in imgs"
+        :class="{active:selected===index, 'small-img':true}"
+        :key="index"
+        width="128px"
         :src="img"
         @mousedown ="selected=index"
         >
@@ -15,32 +17,36 @@
 
 <script>
 export default {
+  props: {
+    imgs: Array
+  },
   name: 'imgDisplayer',
   data: function () {
     return {
-      selected: 0,
-      urls: []
-    }
-  },
-  methods: {
-
-  },
-  mounted: function () {
-    var basePath = '../../static/images/'
-    var format = '.png'
-    var fileName = ['aria', 'irina', 'miku', 'mio', 'nameless']
-    for (let name of fileName) {
-      this.urls.push(basePath + name + format)
+      selected: 0
     }
   }
 }
 </script>
 
 <style>
-.img {
-  margin: 0.13em;
-}
 .active {
-  border: 2px solid wheat
+  border: 2px solid wheat;
+}
+.small-img {
+  margin: 0.13em;
+  width: 10%;
+}
+.large-img {
+  max-width: 100%;
+  width: 50%;
+  max-height: 100%;
+}
+.large-img-holder {
+  border: 2px solid red;
+}
+.small-img-holder {
+  height: 120px;
+  border: 2px solid red;
 }
 </style>
