@@ -12,6 +12,7 @@ export default {
 
 <style>
 #footer {
+  clear: both;
   float: right;
   margin-right: 20px;
 }
